@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDty-o4sHjCtps55pMOSEQTml5XWF_GLws",
+            authDomain: "todoapp-e8510.firebaseapp.com",
+            databaseURL: "https://todoapp-e8510.firebaseio.com",
+            projectId: "todoapp-e8510",
+            storageBucket: "todoapp-e8510.appspot.com",
+            messagingSenderId: "35536271130",
+            appId: "1:35536271130:web:5fd3c44c2d50feae19dea3",
+            measurementId: "G-S49K14QR91"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container bg-primary">
+        <h1 class="text-center text-white">Simple Todo App</h1>
+    </div>
+
+    <div class="container">
+        <div class="card" style="margin-top: 20px;">
+
+            <div class="card-body">
+                <h5 class="card-title">ADD TITLE </h5>
+                <input type="text" class="form-control" id="titleTxt">
+                <br>
+                <h5 class=" card-title">ADD TODO</h5>
+                <textarea class="form-control" id="todoTxt" rows="3"></textarea>
+
+                <button type="button" class="btn btn-primary my-3 " id="addTxt">ADD</button>
+
+
+            </div>
+        </div>
+
+        <h3 class="my-3">Your Todo's</h3>
+        <hr>
+
+        <div class=" container my-3 row " id="notesArea">
+
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+</body>
+<script src="app.js"></script>
+
+</html>
