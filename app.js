@@ -40,7 +40,7 @@ firebase
   <div class="my-3 mx-2  ">
       <div class="card" style="width: 18rem;">
  
-          <div class="card-body">
+          <div class="card-body notesCard">
               <h5 class="card-title">${data.val().todoTitle}</h5>
               <p class="card-text">${data.val().todoTxt}</p>
               <button type="button" class="btn btn-primary" id="${
@@ -78,3 +78,25 @@ function editTodo(e) {
   };
   firebase.database().ref(`todos/${e.id}`).set(todoEdit);
 }
+
+// search todo coding
+
+let search = document.getElementById("search");
+
+search.addEventListener("input", function () {
+  let searchValue = search.value.toLowerCase();
+
+  let cardBody = document.getElementsByClassName("notesCard");
+
+  Array.from(cardBody).forEach(function (element) {
+    let cardText = element.getElementsByTagName("p")[0].innerText;
+
+    if (cardText.includes(searchValue)) {
+      element.style.display = "block";
+      element.parentElement.parentElement.style.display = "block";
+    } else {
+      element.style.display = "none";
+      element.parentElement.parentElement.style.display = "none";
+    }
+  });
+});
